@@ -114,6 +114,6 @@ class DisruptorDemoApplicationTests {
      * @param disruptor
      */
     public static void serialWithPool(Disruptor<LongEvent> disruptor) {
-        disruptor.handleEventsWithWorkerPool(new C11EventHandler(), new C11EventHandler()).then(new C21EventHandler(), new C21EventHandler());
+        disruptor.handleEventsWithWorkerPool(new C11EventHandler(), new C11EventHandler()).thenHandleEventsWithWorkerPool(new C21EventHandler(), new C21EventHandler());
     }
 }
